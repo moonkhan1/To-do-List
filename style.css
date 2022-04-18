@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+
+body{
+      margin: 0;
+  }
+*{
+    box-sizing: border-box;
+}
+.cart{
+    font-family: 'Roboto';
+
+    box-sizing: border-box;
+
+    
+}
+h1{
+    text-align: center;
+    /* position: absolute; */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: #000000;
+    margin-top: 35px;
+}
+
+.xett_1 {
+    right: 17px;
+    top: -14px;
+    width: 8px;
+    height: 8px;
+    opacity: 0.3;
+    margin-bottom: -6px;
+  }
+.sil{
+    opacity: 0.3;
+    background-color: #333;
+}
+.xett_1:hover {
+    opacity: 1;
+    
+}
+.sil:hover {
+    opacity: 1;
+}
+
+.xett_1:before, .xett_1:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 13px;
+    width: 2px;
+    background-color: #333;
+}
+.xett_1:before {
+    transform: rotate(45deg);
+}
+.xett_1:after {
+    transform: rotate(-45deg);
+}
+.sortbtn{
+    background-color: #FFFFFF;
+    border: none;
+    /* position: relative; */
+    width: 30px;
+    height: 30px;
+    opacity:0.5;
+    margin-left: 260px;
+    margin-top: 5px;
+}
+.sortbtn:hover{
+    opacity: 2;
+    color: none;
+}
+/* .list:empty{
+    display: none;
+} */
+.sil{
+    position: relative;
+    bottom: 35px;
+    left: 250px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #C4C4C4;
+    border-radius: 18px;
+    background-color: #C4C4C4;
+
+}
+
+.zolaq button{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #C4C4C4;
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 250px;
+    top:20px;
+}
+
+
+
+.list_new button{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #C4C4C4;
+    background-color: #FFFFFF;
+    position: relative;
+    left: 250px;
+    top:-35px;
+}
+.list_new p{
+    position: relative;
+    left: -13px;
+    top: -13px;
+}
+
+
+.zolaq {
+    
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+
+    border-radius: 10px;
+    border: 1px solid #C4C4C4;
+    position: relative;
+    display: flex;
+}
+.list{
+    font-family: 'Times New Roman', Times, serif;
+    /* margin-top: 15px; */
+    padding: 10px;
+    /* position: absolute; */
+    border-radius: 10px;
+    border: 1px solid #C4C4C4;
+    width: 300px;
+
+}
+ .input {
+    cursor: pointer;
+    /* position: absolute; */
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    /* background: #eee; */
+    font-size: 18px;
+    transition: 0.2s;
+    outline: none;
+    border-style: none;
+  }
+
+  .input:hover {
+    background: #ddd;
+
+  }
+
+
+
