@@ -81,23 +81,24 @@ zolaq.style.border = "none";
 button.addEventListener('click', function () {
     var input_value = document.querySelector('.input').value
     cart.style.height = "auto";
-    a = 0;
-    if (input_value === "") {
-        alert("Invaid input")
-    }
 
-    else {
-        list.style.display = "block"
-        list.innerHTML += `<div class="list_new">
-        <input class = "input" type = "text" value = "${input.value}">
-        <button onclick="removeElement()" class="del"><p class="xett_1"></p></button></div>`;
-        input.value = "";
-        a++;
-        if(a === 0){
-            list.style.display = "none";
-        }
+    input.style.border = "none"
+    list.style.display = "block"
+    list.innerHTML += `<div class="list_new">
+    <input class = "input" type = "text" value = "${input.value}">
+    <button onclick="removeElement()" class="del"><p class="xett_1"></p></button></div>`;
+    input.value = "";
 
-    }
+    var deletes = document.querySelectorAll('.del')
+    // Iterate all nodes
+    deletes.forEach(btn => {
+    // Attach event listener. Note to preserve the button this-reference
+    // by using the non-shorthand function
+    btn.addEventListener('click', function() {
+        var item = this.parentNode
+        item.remove()
+    })
+})
 
 })
 
@@ -109,13 +110,13 @@ var sortbtn = document.querySelector(".sortbtn");
 sortbtn.addEventListener('click', sort_it);
 var del = document.querySelector(".del")
 
-function removeElement() {
-    var i = 0;
-    var item = document.getElementsByClassName("list_new")[i];
-    i++;
-    item.parentNode.removeChild(item);
+// function removeElement() {
+//     var i = 0;
+//     var item = document.querySelector("list_new:last-child");
+//     i++;
+//     item.parentElement.removeChild(item);
 
-}
+// }
 
 
 
@@ -185,4 +186,3 @@ function giveOrder(item) {
         console.log(arr);
     }
 }
-
