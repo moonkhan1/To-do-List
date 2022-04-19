@@ -78,23 +78,28 @@ var zolaq = document.querySelector(".zolaq")
 var list = document.querySelector(".list");
 list.style.display = "none"
 zolaq.style.border = "none";
+var a = 0;
 button.addEventListener('click', function () {
     var input_value = document.querySelector('.input').value
     cart.style.height = "auto";
 
-    input.style.border = "none"
+    input.style.display = "none"
+    sil.style.display = "none"
     list.style.display = "block"
     list.innerHTML += `<div class="list_new">
     <input class = "input" type = "text" value = "${input.value}">
     <button onclick="removeElement()" class="del"><p class="xett_1"></p></button></div>`;
     input.value = "";
+    // a++;
+    // if(a>=0){
+    //     if(input.innerHTML === ''){
+    //         input.style.display ="none"
+    //     }
+    // }
 
     var deletes = document.querySelectorAll('.del')
-    // Iterate all nodes
     deletes.forEach(btn => {
-    // Attach event listener. Note to preserve the button this-reference
-    // by using the non-shorthand function
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function()  {
         var item = this.parentNode
         item.remove()
     })
@@ -102,12 +107,21 @@ button.addEventListener('click', function () {
 
 })
 
+// var deletes = document.querySelectorAll('.sortbtn')
+//     deletes.forEach(btn => {
+//     btn.addEventListener('click', function() {
+//         var item = this.parentNode
+//         item.remove()
+//     })
+// })
 
 
 var arr = [];
 var count = 0;
 var sortbtn = document.querySelector(".sortbtn");
 sortbtn.addEventListener('click', sort_it);
+sortbtn.addEventListener('click', del_aftersort);
+
 var del = document.querySelector(".del")
 
 // function removeElement() {
@@ -117,8 +131,15 @@ var del = document.querySelector(".del")
 //     item.parentElement.removeChild(item);
 
 // }
-
-
+function del_aftersort(){
+var deletes = document.querySelectorAll('.del')
+    deletes.forEach(btn => {
+    btn.addEventListener('click', function()  {
+        var item = this.parentNode
+        item.remove()
+    })
+    })
+}
 
 
 function sort_it() {
@@ -186,3 +207,4 @@ function giveOrder(item) {
         console.log(arr);
     }
 }
+
