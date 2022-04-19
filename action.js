@@ -80,7 +80,8 @@ list.style.display = "none"
 zolaq.style.border = "none";
 var a = 0;
 button.addEventListener('click', function () {
-    var input_value = document.querySelector('.input').value
+    // var input_old = document.getElementById('input_old')
+    // var sil_button = document.getElementById('sil_old')
     cart.style.height = "auto";
 
     input.style.display = "none"
@@ -88,7 +89,7 @@ button.addEventListener('click', function () {
     list.style.display = "block"
     list.innerHTML += `<div class="list_new">
     <input class = "input" type = "text" value = "${input.value}">
-    <button onclick="removeElement()" class="del"><p class="xett_1"></p></button></div>`;
+    <button class="del"><p class="xett_1"></p></button></div>`;
     input.value = "";
     // a++;
     // if(a>=0){
@@ -96,6 +97,12 @@ button.addEventListener('click', function () {
     //         input.style.display ="none"
     //     }
     // }
+var inputs = document.querySelectorAll(".input");
+inputs.forEach(el => {
+    el.addEventListener('blur', _=>{
+        el.setAttribute("value", el.value)
+    })
+})
 
     var deletes = document.querySelectorAll('.del')
     deletes.forEach(btn => {
@@ -121,6 +128,7 @@ var count = 0;
 var sortbtn = document.querySelector(".sortbtn");
 sortbtn.addEventListener('click', sort_it);
 sortbtn.addEventListener('click', del_aftersort);
+sortbtn.addEventListener('click', edit_beforesort);
 
 var del = document.querySelector(".del")
 
@@ -131,6 +139,15 @@ var del = document.querySelector(".del")
 //     item.parentElement.removeChild(item);
 
 // }
+
+function edit_beforesort(){
+    var inputs = document.querySelectorAll(".input");
+    inputs.forEach(el => {
+        el.addEventListener('blur', _=>{
+            el.setAttribute("value", el.value)
+    })
+})
+}
 function del_aftersort(){
 var deletes = document.querySelectorAll('.del')
     deletes.forEach(btn => {
