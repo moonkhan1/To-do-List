@@ -80,8 +80,7 @@ list.style.display = "none"
 zolaq.style.border = "none";
 var a = 0;
 button.addEventListener('click', function () {
-    // var input_old = document.getElementById('input_old')
-    // var sil_button = document.getElementById('sil_old')
+
     cart.style.height = "auto";
 
     input.style.display = "none"
@@ -91,12 +90,7 @@ button.addEventListener('click', function () {
     <input class = "input" type = "text" value = "${input.value}">
     <button class="del"><p class="xett_1"></p></button></div>`;
     input.value = "";
-    // a++;
-    // if(a>=0){
-    //     if(input.innerHTML === ''){
-    //         input.style.display ="none"
-    //     }
-    // }
+
 var inputs = document.querySelectorAll(".input");
 inputs.forEach(el => {
     el.addEventListener('blur', _=>{
@@ -114,13 +108,6 @@ inputs.forEach(el => {
 
 })
 
-// var deletes = document.querySelectorAll('.sortbtn')
-//     deletes.forEach(btn => {
-//     btn.addEventListener('click', function() {
-//         var item = this.parentNode
-//         item.remove()
-//     })
-// })
 
 
 var arr = [];
@@ -132,13 +119,7 @@ sortbtn.addEventListener('click', edit_beforesort);
 
 var del = document.querySelector(".del")
 
-// function removeElement() {
-//     var i = 0;
-//     var item = document.querySelector("list_new:last-child");
-//     i++;
-//     item.parentElement.removeChild(item);
 
-// }
 
 function edit_beforesort(){
     var inputs = document.querySelectorAll(".input");
